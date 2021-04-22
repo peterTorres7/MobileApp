@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        
 
 //        // Checks validations
 //        submitButton.setOnClickListener(new View.OnClickListener() {
