@@ -68,14 +68,6 @@ public class MainActivity extends AppCompatActivity {
         });
         
 
-//        // Checks validations
-//        submitButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View view) {
-//                validateName(nameEditText);
-//                validateEmail(emailEditText);
-//                validateUsername(usernameEditText);
-//            }
-//        });
 
 //        // age validation
 //        String birthday = birthdayEditText.getText().toString();
