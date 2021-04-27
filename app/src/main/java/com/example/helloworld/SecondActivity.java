@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SecondActivity extends AppCompatActivity {
 
     private static final String TAG = SecondActivity.class.getSimpleName();
-    private TextView nameTextView, ageTextView, occupationTextView;
+    private TextView nameTextView, ageTextView, occupationTextView, descriptionTextView;
     private ImageView profilePicture;
     private Button homeButton;
 
@@ -34,15 +34,17 @@ public class SecondActivity extends AppCompatActivity {
         nameTextView = findViewById(R.id.nameTextView);
         ageTextView = findViewById(R.id.ageTextView);
         occupationTextView = findViewById(R.id.occupationTextView);
-
+        descriptionTextView = findViewById(R.id.descriptionTextView);
 
         StringBuilder msg = new StringBuilder("Thanks for Signing Up \n");
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
-        String age = "35";
-        String name = "Peter";
-        String occupation = "Student";
+        String age = "12";
+        String name = "Diego";
+        String occupation = "Dog";
+        String description = "Love treats and long walks!";
+
         if (b != null) {
             if (b.containsKey(Constants.KEY_NAME)) {
                 name = b.getString(Constants.KEY_NAME);
@@ -53,6 +55,9 @@ public class SecondActivity extends AppCompatActivity {
             if (b.containsKey(Constants.KEY_OCCUPATION)) {
                 occupation = b.getString(Constants.KEY_OCCUPATION);
             }
+            if (b.containsKey(Constants.KEY_DESCRIPTION)) {
+                description = b.getString(Constants.KEY_DESCRIPTION);
+            }
         }
 
         msg.append(name).append("!\n");
@@ -61,6 +66,8 @@ public class SecondActivity extends AppCompatActivity {
         nameTextView.setText(name);
         ageTextView.setText(age);
         occupationTextView.setText(occupation);
+        descriptionTextView.setText(description);
+
         Log.i(TAG, "onCreate()");
     }
 

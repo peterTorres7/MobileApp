@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(Constants.KEY_NAME, nameEditText.getText().toString());
         intent.putExtra(Constants.KEY_AGE, ageEditText.getText().toString());
         intent.putExtra(Constants.KEY_OCCUPATION, occupationEditText.getText().toString());
+        intent.putExtra(Constants.KEY_DESCRIPTION, descriptionEditText.getText().toString());
         startActivity(intent);
     }
 
