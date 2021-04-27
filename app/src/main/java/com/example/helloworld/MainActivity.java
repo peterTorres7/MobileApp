@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private EditText nameEditText, emailEditText, usernameEditText, birthdayEditText;
+    private EditText nameEditText, ageEditText, descriptionEditText, occupationEditText;
     private Button submitButton;
     private TextView textView;
     private  DatePickerDialog datepicker;
@@ -39,33 +39,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         nameEditText = findViewById(R.id.nameEditText);
-        emailEditText = findViewById(R.id.emailEditText);
-        usernameEditText = findViewById(R.id.usernameEditText);
+        ageEditText = findViewById(R.id.ageEditText);
+        descriptionEditText = findViewById(R.id.descriptionEditText);
+        occupationEditText = findViewById((R.id.occupationEditText));
         submitButton = findViewById(R.id.submitButton);
         textView = findViewById(R.id.textView);
 
-        birthdayEditText = findViewById(R.id.birthdayEditText);
-        birthdayEditText.setInputType(InputType.TYPE_NULL);
-        birthdayEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Calendar calendar = Calendar.getInstance();
-                int day = calendar.get(Calendar.DAY_OF_MONTH);
-                int month = calendar.get(Calendar.MONTH);
-                int year = calendar.get(Calendar.YEAR);
-
-                datepicker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        birthdayEditText.setText((monthOfYear + 1) + "/" + dayOfMonth + "/" + year);
-                    }
-                }, year, month, day);
-                datepicker.show();
-
-
-
-            }
-        });
+//        birthdayEditText = findViewById(R.id.birthdayEditText);
+//        birthdayEditText.setInputType(InputType.TYPE_NULL);
+//        birthdayEditText.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                final Calendar calendar = Calendar.getInstance();
+//                int day = calendar.get(Calendar.DAY_OF_MONTH);
+//                int month = calendar.get(Calendar.MONTH);
+//                int year = calendar.get(Calendar.YEAR);
+//
+//                datepicker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+//                    @Override
+//                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+//                        birthdayEditText.setText((monthOfYear + 1) + "/" + dayOfMonth + "/" + year);
+//                    }
+//                }, year, month, day);
+//                datepicker.show();
+//
+//
+//
+//            }
+//        });
         
 
 
@@ -98,17 +99,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Email validation
-    private boolean validateEmail(EditText email) {
-        String emailInput = email.getText().toString().trim();
-        if (!emailInput.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
-            Toast.makeText(this, "Valid email!", Toast.LENGTH_SHORT).show();
-            return true;
-        } else {
-            Toast.makeText(this, "Invalid email!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
+//    // Email validation
+//    private boolean validateEmail(EditText email) {
+//        String emailInput = email.getText().toString().trim();
+//        if (!emailInput.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
+//            Toast.makeText(this, "Valid email!", Toast.LENGTH_SHORT).show();
+//            return true;
+//        } else {
+//            Toast.makeText(this, "Invalid email!", Toast.LENGTH_SHORT).show();
+//            return false;
+//        }
+//    }
 
     // Username validation
     private boolean validateUsername(EditText username) {
@@ -122,24 +123,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    // Date of birth validation
-//    private boolean validateDateOfBirth(EditText birthday) {
-//        String DOB = birthday.getText().toString().trim();
-//        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-//
-//        int userAge = DOB%2;
-//    }
-
-// Menu for possible later use
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
 
     public void goToSecondActivity(View view) {
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         intent.putExtra(Constants.KEY_NAME, nameEditText.getText().toString());
+        intent.putExtra(Constants.KEY_AGE, ageEditText.getText().toString());
+        intent.putExtra(Constants.KEY_OCCUPATION, occupationEditText.getText().toString());
         startActivity(intent);
     }
 

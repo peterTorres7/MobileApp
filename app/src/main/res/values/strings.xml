@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">HelloWorld</string>
-    <string name="my_name">Peter Torres 4/17/21</string>
+    <string name="my_name">Peter Torres 4/26/21</string>
     <string name="hello_world">Hello World!</string>
     <string name="menu_settings">Settings</string>
     <string name="Welcome">Welcome: %s</string>
-    <string name="enter_name">enter name</string>
+    <string name="enter_name">name</string>
     <string name="submit">Submit!</string>
     <string name="message_on_login">Message On Login</string>
     <string name="email_address">email address</string>
@@ -12,4 +12,7 @@
     <string name="date_of_birth">date of birth</string>
     <string name="select_birthday">Select Birthday...</string>
     <string name="home">Home</string>
+    <string name="enter_age">age</string>
+    <string name="description">description</string>
+    <string name="occupation">occupation</string>
 </resources>
