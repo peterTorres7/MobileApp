@@ -38,12 +38,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        nameEditText = findViewById(R.id.nameEditText);
-        ageEditText = findViewById(R.id.ageEditText);
-        descriptionEditText = findViewById(R.id.descriptionEditText);
-        occupationEditText = findViewById((R.id.occupationEditText));
-        submitButton = findViewById(R.id.submitButton);
-        textView = findViewById(R.id.textView);
 
 //        birthdayEditText = findViewById(R.id.birthdayEditText);
 //        birthdayEditText.setInputType(InputType.TYPE_NULL);
@@ -67,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 //
 //            }
 //        });
-        
 
 
 //        // age validation
@@ -87,18 +80,6 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "onCreate()");
     }
 
-    // Name validation
-    private boolean validateName(EditText name) {
-        String nameInput = name.getText().toString().trim();
-        if (!nameInput.isEmpty()) {
-            Toast.makeText(this, "Valid name!", Toast.LENGTH_SHORT).show();
-            return true;
-        } else {
-            Toast.makeText(this, "Invalid name!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
-
 //    // Email validation
 //    private boolean validateEmail(EditText email) {
 //        String emailInput = email.getText().toString().trim();
@@ -111,20 +92,34 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //    }
 
-    // Username validation
-    private boolean validateUsername(EditText username) {
-        String usernameInput = username.getText().toString().trim();
-        if (!usernameInput.isEmpty()) {
-            Toast.makeText(this, "Valid username!", Toast.LENGTH_SHORT).show();
-            return true;
-        } else {
-            Toast.makeText(this, "Invalid username!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
-
 
     public void goToSecondActivity(View view) {
+
+        nameEditText = findViewById(R.id.nameEditText);
+        ageEditText = findViewById(R.id.ageEditText);
+        descriptionEditText = findViewById(R.id.descriptionEditText);
+        occupationEditText = findViewById((R.id.occupationEditText));
+        submitButton = findViewById(R.id.submitButton);
+        textView = findViewById(R.id.textView);
+
+
+        if (nameEditText.getText().toString().trim().isEmpty()) {
+            nameEditText.setError("Please enter name!");
+            return;
+        }
+        if (ageEditText.getText().toString().trim().isEmpty()) {
+            ageEditText.setError("Please enter age!");
+            return;
+        }
+        if (occupationEditText.getText().toString().trim().isEmpty()) {
+            occupationEditText.setError("Please enter occupation!");
+            return;
+        }
+        if (descriptionEditText.getText().toString().trim().isEmpty()) {
+            descriptionEditText.setError("Please enter description!");
+            return;
+        }
+
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         intent.putExtra(Constants.KEY_NAME, nameEditText.getText().toString());
         intent.putExtra(Constants.KEY_AGE, ageEditText.getText().toString());
