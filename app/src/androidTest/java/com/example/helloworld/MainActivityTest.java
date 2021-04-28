@@ -9,8 +9,12 @@ import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static org.hamcrest.Matchers.allOf;
+
 import static org.junit.Assert.*;
 
 @RunWith(AndroidJUnit4.class)
@@ -22,6 +26,12 @@ public class MainActivityTest {
     @Test
     public void hasTextOnScreen() {
         onView(withId(R.id.textView))
-                .check(matches(withText(R.string.my_name)));
+                .check(matches(withText("Peter Torres 4/26/21")));
+    }
+
+    @Test
+    public void checkName() {
+        onView(withId(R.id.nameTextView)).perform(typeText(""));
+        onView(allOf(withId(R.id.nameTextView), hasErrorText("Please enter name!")));
     }
 }
