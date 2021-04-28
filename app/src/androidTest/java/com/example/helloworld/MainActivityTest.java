@@ -29,9 +29,9 @@ public class MainActivityTest {
                 .check(matches(withText("Peter Torres 4/26/21")));
     }
 
-    @Test
-    public void checkName() {
-        onView(withId(R.id.nameTextView)).perform(typeText(""));
-        onView(allOf(withId(R.id.nameTextView), hasErrorText("Please enter name!")));
-    }
+//    @Test
+//    public void checkName() {
+//        onView(withId(R.id.nameTextView)).perform(typeText(""));
+//        onView(allOf(withId(R.id.nameTextView), hasErrorText("Please enter name!")));
+//    }
 }
