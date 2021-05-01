@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_name"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/twentyDp"
         android:inputType="text"
         android:textColorHint="@color/white"
         android:textColor="@color/white" />
@@ -28,7 +28,7 @@
         android:id="@+id/ageEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/twentyDp"
         android:hint="@string/enter_age"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -38,7 +38,7 @@
         android:id="@+id/occupationEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/twentyDp"
         android:hint="@string/occupation"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -48,7 +48,7 @@
         android:id="@+id/descriptionEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/twentyDp"
         android:hint="@string/description"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -59,14 +59,14 @@
         android:layout_height="wrap_content"
         android:text="@string/submit"
         android:onClick="goToSecondActivity"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginTop="@dimen/twentyDp"
+        android:layout_marginBottom="@dimen/twentyDp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/twentyDp"
         android:text="@string/my_name"
         android:textColor="@color/white" />
 

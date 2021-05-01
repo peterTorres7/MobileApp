@@ -15,10 +15,10 @@
     <ImageView
         android:id="@+id/profilePicture"
         android:layout_width="wrap_content"
-        android:layout_height="500dp"
-        android:padding="10dp"
-        android:layout_marginTop="-90dp"
-        android:layout_marginBottom="-90dp"
+        android:layout_height="@dimen/large"
+        android:padding="@dimen/tenDp"
+        android:layout_marginTop="@dimen/neg90"
+        android:layout_marginBottom="@dimen/neg90"
         android:layout_below="@+id/homeButton"
         android:src="@drawable/diego" />
 
@@ -26,30 +26,30 @@
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="@dimen/tenDp"
         android:layout_below="@+id/profilePicture"
-        android:textColor="#1c6b31"
+        android:textColor="@color/green"
         android:textStyle="bold|italic"
-        android:textSize="28sp" />
+        android:textSize="@dimen/twentyEightSp" />
 
     <TextView
         android:id="@+id/ageTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="@dimen/tenDp"
         android:layout_toEndOf="@+id/nameTextView"
         android:layout_below="@+id/profilePicture"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:textSize="@dimen/twentyFourSp" />
 
     <TextView
         android:id="@+id/occupationTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nameTextView"
-        android:padding="10dp"
-        android:textSize="20sp"
+        android:padding="@dimen/tenDp"
+        android:textSize="@dimen/twentySp"
         android:textColor="@color/black"/>
 
     <TextView
@@ -57,8 +57,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/occupationTextView"
-        android:padding="10dp"
-        android:textSize="16sp"
+        android:padding="@dimen/tenDp"
+        android:textSize="@dimen/sixteenSp"
         android:textColor="@color/black" />
 
 

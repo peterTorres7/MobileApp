@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="twentyDp">10dp</dimen>
+    <dimen name="large">500dp</dimen>
+    <dimen name="tenDp">10dp</dimen>
+    <dimen name="neg90">-90dp</dimen>
+    <dimen name="twentyEightSp">28sp</dimen>
+    <dimen name="twentyFourSp">24sp</dimen>
+    <dimen name="sixteenSp">16sp</dimen>
+    <dimen name="twentySp">20sp</dimen>
+</resources>
