@@ -4,63 +4,14 @@
     android:layout_width="match_parent">
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/homeButton"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home" />
-
-    <ImageView
-        android:id="@+id/profilePicture"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/large"
-        android:padding="@dimen/tenDp"
-        android:layout_marginTop="@dimen/neg90"
-        android:layout_marginBottom="@dimen/neg90"
-        android:layout_below="@+id/homeButton"
-        android:src="@drawable/diego" />
-
-    <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/tenDp"
-        android:layout_below="@+id/profilePicture"
-        android:textColor="@color/green"
-        android:textStyle="bold|italic"
-        android:textSize="@dimen/twentyEightSp" />
-
-    <TextView
-        android:id="@+id/ageTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/tenDp"
-        android:layout_toEndOf="@+id/nameTextView"
-        android:layout_below="@+id/profilePicture"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="@dimen/twentyFourSp" />
-
-    <TextView
-        android:id="@+id/occupationTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nameTextView"
-        android:padding="@dimen/tenDp"
-        android:textSize="@dimen/twentySp"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/occupationTextView"
-        android:padding="@dimen/tenDp"
-        android:textSize="@dimen/sixteenSp"
-        android:textColor="@color/black" />
-
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
 </ScrollView>
