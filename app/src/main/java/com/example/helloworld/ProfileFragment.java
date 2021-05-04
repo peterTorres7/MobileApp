@@ -22,6 +22,7 @@ public class ProfileFragment extends Fragment {
     private TextView nameTextView, ageTextView, occupationTextView, descriptionTextView;
     private ImageView profilePicture;
     private Button homeButton;
+    private SecondActivity.Info info;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -38,8 +39,21 @@ public class ProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        profilePicture = view.findViewById(R.id.profilePicture);
+        nameTextView = view.findViewById(R.id.nameTextView);
+        ageTextView = view.findViewById(R.id.ageTextView);
+        occupationTextView = view.findViewById(R.id.occupationTextView);
+        descriptionTextView = view.findViewById(R.id.descriptionTextView);
+
+        nameTextView.setText(this.info.name);
+        ageTextView.setText(this.info.age);
+        occupationTextView.setText(this.info.occupation);
+        descriptionTextView.setText(this.info.description);
+
         Log.i(TAG, "onCreateView()");
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        return view;
     }
 
     @Override
@@ -51,7 +65,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        Log.i(TAG, "onStart");
+        Log.i(TAG, "onStart()");
     }
 
     @Override
@@ -73,11 +87,26 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.i(TAG, "onDestroyView()");
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "onDestroy()");
     }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.i(TAG, "onDetach()");
+    }
+
+    void setInfo(SecondActivity.Info info) {
+        this.info = info;
+    }
 
 //
 //

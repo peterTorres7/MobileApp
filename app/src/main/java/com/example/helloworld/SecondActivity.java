@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class SecondActivity extends AppCompatActivity {
 
     private static final String TAG = SecondActivity.class.getSimpleName();
-    private TextView nameTextView, ageTextView, occupationTextView, descriptionTextView;
+    private String name, age, occupation, description;
     private ImageView profilePicture;
     private Button homeButton;
 
@@ -25,56 +25,44 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        homeButton = findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+
+
+        if (b != null) {
+            if (b.containsKey(Constants.KEY_NAME)) {
+                name = b.getString(Constants.KEY_NAME);
+            }
+            if (b.containsKey(Constants.KEY_AGE)) {
+                age = b.getString((Constants.KEY_AGE));
+            }
+            if (b.containsKey(Constants.KEY_OCCUPATION)) {
+                occupation = b.getString(Constants.KEY_OCCUPATION);
+            }
+            if (b.containsKey(Constants.KEY_DESCRIPTION)) {
+                description = b.getString(Constants.KEY_DESCRIPTION);
+            }
+        }
+
         ProfileFragment profileFragment = new ProfileFragment();
+        profileFragment.setInfo(new Info(name, age, occupation, description));
+
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(R.id.frameLayout, profileFragment, "profileFragment");
         transaction.commit();
         Log.i(TAG, "onCreate()");
 
-//        homeButton = findViewById(R.id.homeButton);
-//        homeButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
-//
-//        profilePicture = findViewById(R.id.profilePicture);
-//        nameTextView = findViewById(R.id.nameTextView);
-//        ageTextView = findViewById(R.id.ageTextView);
-//        occupationTextView = findViewById(R.id.occupationTextView);
-//        descriptionTextView = findViewById(R.id.descriptionTextView);
-//
-//        Intent intent = getIntent();
-//        Bundle b = intent.getExtras();
-//
-//        String age = "12";
-//        String name = "Diego";
-//        String occupation = "Dog";
-//        String description = "Love treats and long walks!";
-//
-//        if (b != null) {
-//            if (b.containsKey(Constants.KEY_NAME)) {
-//                name = b.getString(Constants.KEY_NAME);
-//            }
-//            if (b.containsKey(Constants.KEY_AGE)) {
-//                age = b.getString((Constants.KEY_AGE));
-//            }
-//            if (b.containsKey(Constants.KEY_OCCUPATION)) {
-//                occupation = b.getString(Constants.KEY_OCCUPATION);
-//            }
-//            if (b.containsKey(Constants.KEY_DESCRIPTION)) {
-//                description = b.getString(Constants.KEY_DESCRIPTION);
-//            }
-//        }
-//
-//        Log.i(TAG, new StringBuilder("Name: ").append(name).toString());
-//
-//        nameTextView.setText(name);
-//        ageTextView.setText(age);
-//        occupationTextView.setText(occupation);
-//        descriptionTextView.setText(description);
+
+
 
         Log.i(TAG, "onCreate()");
     }
@@ -113,5 +101,16 @@ public class SecondActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "onDestroy()");
+    }
+
+    public static class Info {
+        String name, age, occupation, description;
+
+        Info(String name, String age, String occupation, String description) {
+            this.name = name;
+            this.age = age;
+            this.occupation = occupation;
+            this.description = description;
+        }
     }
 }
