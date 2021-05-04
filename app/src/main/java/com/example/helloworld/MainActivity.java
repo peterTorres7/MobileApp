@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
 //        birthdayEditText = findViewById(R.id.birthdayEditText);
 //        birthdayEditText.setInputType(InputType.TYPE_NULL);
 //        birthdayEditText.setOnClickListener(new View.OnClickListener() {
