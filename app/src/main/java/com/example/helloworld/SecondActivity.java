@@ -138,11 +138,11 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
                 break;
             case R.id.nav_matches:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new MatchessFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new MatchesFragment()).commit();
                 break;
             case R.id.nav_settings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new SettingsFragment()).commit();
-                break;;
+                break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
