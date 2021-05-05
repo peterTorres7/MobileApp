@@ -3,22 +3,33 @@ package com.example.helloworld;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class SecondActivity extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class SecondActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = SecondActivity.class.getSimpleName();
     private String name, age, occupation, description;
     private ImageView profilePicture;
     private Button homeButton;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,6 +43,21 @@ public class SecondActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_profile);
 
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
@@ -103,6 +129,25 @@ public class SecondActivity extends AppCompatActivity {
         Log.i(TAG, "onDestroy()");
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_profile:
+                ProfileFragment fragment = new ProfileFragment();
+                fragment.setInfo(new Info(name, age, occupation, description));
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment).commit();
+                break;
+            case R.id.nav_matches:
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new MatchessFragment()).commit();
+                break;
+            case R.id.nav_settings:
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new SettingsFragment()).commit();
+                break;;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
     public static class Info {
         String name, age, occupation, description;
 
@@ -111,6 +156,15 @@ public class SecondActivity extends AppCompatActivity {
             this.age = age;
             this.occupation = occupation;
             this.description = description;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
         }
     }
 }
