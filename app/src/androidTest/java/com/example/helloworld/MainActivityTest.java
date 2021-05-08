@@ -30,8 +30,14 @@ public class MainActivityTest {
     }
 
 //    @Test
+//    public void userCanSignUp() throws InterruptedException {
+//        onView(withId(R.id.nameEditText)).perform(typeText("Diego"));
+//
+//    }
+
+//    @Test
 //    public void checkName() {
-//        onView(withId(R.id.nameTextView)).perform(typeText(""));
+//        onView(withId(R.id.nameTextView)).perform(typeText("Diego"));
 //        onView(allOf(withId(R.id.nameTextView), hasErrorText("Please enter name!")));
 //    }
 }
