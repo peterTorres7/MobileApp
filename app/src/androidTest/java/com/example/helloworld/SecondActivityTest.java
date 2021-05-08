@@ -15,8 +15,8 @@ import static org.hamcrest.Matchers.allOf;
 
 public class SecondActivityTest {
     @Rule
-    public ActivityScenarioRule<MainActivity> activityScenarioRule
-            = new ActivityScenarioRule<>(MainActivity.class);
+    public ActivityScenarioRule<SecondActivity> activityScenarioRule
+            = new ActivityScenarioRule<>(SecondActivity.class);
 
     @Test
     public void profileDrawerCheck() {
