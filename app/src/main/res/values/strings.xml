@@ -21,5 +21,5 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="your_matches_go_here">Your matches go here!</string>
-    <string name="setting_go_here">Setting go here!</string>
+    <string name="settings_go_here">Settings go here!</string>
 </resources>
