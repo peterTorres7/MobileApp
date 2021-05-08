@@ -28,7 +28,7 @@ public class MainActivityTest {
     @Test
     public void hasTextOnScreen() {
         onView(withId(R.id.textView))
-                .check(matches(withText("Peter Torres 4/26/21")));
+                .check(matches(withText("Peter Torres 5/7/21")));
     }
 
     @Test
@@ -50,7 +50,38 @@ public class MainActivityTest {
     @Test
     public void blankNameCheck() {
         onView(withId(R.id.nameEditText)).perform(typeText(""));
+
         onView(withId(R.id.submitButton)).perform(scrollTo(),(click()));
         onView(allOf(withId(R.id.nameTextView), hasErrorText("Please enter name!")));
+    }
+
+    @Test
+    public void blankAgeCheck() {
+        onView(withId(R.id.nameEditText)).perform(typeText("Diego"));
+        onView(withId(R.id.ageEditText)).perform(typeText(""));
+
+        onView(withId(R.id.submitButton)).perform(scrollTo(),(click()));
+        onView(allOf(withId(R.id.ageTextView), hasErrorText("Please enter age!")));
+    }
+
+    @Test
+    public void blankOccupationCheck() {
+        onView(withId(R.id.nameEditText)).perform(typeText("Diego"));
+        onView(withId(R.id.ageEditText)).perform(typeText("12"));
+        onView(withId(R.id.occupationEditText)).perform(typeText(""));
+
+        onView(withId(R.id.submitButton)).perform(scrollTo(),(click()));
+        onView(allOf(withId(R.id.occupationTextView), hasErrorText("Please enter occupation!")));
+    }
+
+    @Test
+    public void blankDescriptionCheck() {
+        onView(withId(R.id.nameEditText)).perform(typeText("Diego"));
+        onView(withId(R.id.ageEditText)).perform(typeText("12"));
+        onView(withId(R.id.occupationEditText)).perform(typeText("Dog"));
+        onView(withId(R.id.descriptionEditText)).perform(typeText(""));
+
+        onView(withId(R.id.submitButton)).perform(scrollTo(),(click()));
+        onView(allOf(withId(R.id.descriptionTextView), hasErrorText("Please enter description!")));
     }
 }
