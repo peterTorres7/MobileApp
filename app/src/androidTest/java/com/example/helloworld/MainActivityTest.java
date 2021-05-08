@@ -47,9 +47,10 @@ public class MainActivityTest {
 
     }
 
-//    @Test
-//    public void checkName() {
-//        onView(withId(R.id.nameTextView)).perform(typeText("Diego"));
-//        onView(allOf(withId(R.id.nameTextView), hasErrorText("Please enter name!")));
-//    }
+    @Test
+    public void checkBlankName() {
+        onView(withId(R.id.nameTextView)).perform(typeText(""));
+        onView(withId(R.id.submitButton)).perform(scrollTo(),(click()));
+        onView(allOf(withId(R.id.nameTextView), hasErrorText("Please enter name!")));
+    }
 }
