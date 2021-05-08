@@ -84,4 +84,5 @@ public class MainActivityTest {
         onView(withId(R.id.submitButton)).perform(scrollTo(),(click()));
         onView(allOf(withId(R.id.descriptionTextView), hasErrorText("Please enter description!")));
     }
+
 }
