@@ -49,7 +49,7 @@ public class MainActivityTest {
 
     @Test
     public void blankNameCheck() {
-        onView(withId(R.id.nameTextView)).perform(typeText(""));
+        onView(withId(R.id.nameEditText)).perform(typeText(""));
         onView(withId(R.id.submitButton)).perform(scrollTo(),(click()));
         onView(allOf(withId(R.id.nameTextView), hasErrorText("Please enter name!")));
     }
