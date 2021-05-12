@@ -28,7 +28,7 @@ public class MainActivityTest {
     @Test
     public void hasTextOnScreen() {
         onView(withId(R.id.textView))
-                .check(matches(withText("Peter Torres 5/7/21")));
+                .check(matches(withText("Peter Torres 5/11/21")));
     }
 
     @Test

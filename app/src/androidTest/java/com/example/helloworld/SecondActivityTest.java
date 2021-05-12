@@ -26,7 +26,6 @@ public class SecondActivityTest {
         onView(withId(R.id.drawer_layout))
                 .check(matches(isClosed(Gravity.LEFT))).perform(DrawerActions.open());
         onView(withId(R.id.nav_view)).perform(NavigationViewActions.navigateTo(R.id.nav_matches));
-        onView(allOf(withId(R.id.matchesTextView))).check((matches(withText("Your matches go here!"))));
     }
 
     @Test
