@@ -22,4 +22,18 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="your_matches_go_here">Your matches go here!</string>
     <string name="settings_go_here">Settings go here!</string>
+    <string name="matches_description">Matches description.</string>
+    <string name="here_are_your_matches">Here are your matches!</string>
+    <string name="match_name">Match Name</string>
+    <string name="bella">Bella</string>
+    <string name="coco">Coco</string>
+    <string name="cookie">Cookie</string>
+    <string name="evie">Evie</string>
+    <string name="honey">Honey</string>
+    <string name="lola">Lola</string>
+    <string name="luna">Luna</string>
+    <string name="nala">Nala</string>
+    <string name="sky">Sky</string>
+    <string name="star">Star</string>
+
 </resources>
