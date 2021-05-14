@@ -22,6 +22,7 @@ public class MatchesCardViewHolder extends RecyclerView.ViewHolder {
         likeButton = itemView.findViewById(R.id.likeButton);
 
         likeButton.setOnClickListener(view -> {
+            likeButton.setBackgroundResource(R.drawable.like_icon);
             String likeMsg = "You liked " + matchesName.getText().toString() + "!";
             Toast toast = Toast.makeText(view.getContext(), likeMsg, Toast.LENGTH_LONG);
             View toastView = toast.getView();
