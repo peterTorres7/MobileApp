@@ -1,50 +1,53 @@
 package com.example.helloworld;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.QuerySnapshot;
 
-public class MatchesDataModel implements Parcelable {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
 
-    public String imageUrl;
-    public boolean liked;
-    public String name;
-    public String uid;
+public class MatchesDataModel {
+    private FirebaseFirestore db;
+    private List<ListenerRegistration> listeners;
 
     public MatchesDataModel() {
+        db = FirebaseFirestore.getInstance();
+        listeners = new ArrayList<>();
     }
 
-    public MatchesDataModel(String imageUrl, String name, boolean liked) {
-        this.imageUrl = imageUrl;
-        this.name = name;
-        this.liked = liked;
+    public void getMatches(Consumer<QuerySnapshot> dataChangedCallback, Consumer<FirebaseFirestoreException> dataErrorCallback) {
+        ListenerRegistration registration = db.collection("matches").addSnapshotListener((queryDocumentSnapshots, e) -> {
+            if (e != null) {
+                dataErrorCallback.accept(e);
+            }
+            dataChangedCallback.accept(queryDocumentSnapshots);
+        });
+        listeners.add(registration);
     }
 
-    public MatchesDataModel(Parcel in) {
-        imageUrl = in.readString();
-        name = in.readString();
-        liked = in.readByte() != 0;
+    public void addMatches(MatchesModel matchesModel) {
+        CollectionReference toDoMatchesRef = db.collection("matches");
+        toDoMatchesRef.add(matchesModel);
     }
 
-    public static final Creator<MatchesDataModel> CREATOR = new Creator<MatchesDataModel>() {
-        @Override
-        public MatchesDataModel createFromParcel(Parcel in) {
-            return new MatchesDataModel(in);
-        }
+    public void updateMatches(MatchesModel matchesModel) {
+        DocumentReference matchesModelRef = db.collection("matches").document(matchesModel.uid);
 
-        @Override
-        public MatchesDataModel[] newArray(int size) {
-            return new MatchesDataModel[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
+        Map<String, Object> info = new HashMap<>();
+        info.put("imageUrl", matchesModel.imageUrl);
+        info.put("name", matchesModel.name);
+        info.put("liked", matchesModel.liked);
+        matchesModelRef.update(info);
     }
 
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(imageUrl);
-        dest.writeString(name);
-        dest.writeByte((byte) (liked ? 1 : 0));
+    public void clear() {
+        listeners.forEach(ListenerRegistration::remove);
     }
 }
