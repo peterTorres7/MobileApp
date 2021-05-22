@@ -13,22 +13,7 @@ public class MatchesViewModel {
         matchesDataModel = new MatchesDataModel();
     }
 
-    public void getMatches(Consumer<ArrayList<MatchesModel>> resultCallback) {
-        matchesDataModel.getMatches(
-                (QuerySnapshot querySnapShot) -> {
-                    if (querySnapShot != null) {
-                        ArrayList<MatchesModel> matches = new ArrayList<>();
-                        for (DocumentSnapshot matchSnapshot : querySnapShot.getDocuments()) {
-                            MatchesModel matchesModel = matchSnapshot.toObject(MatchesModel.class);
-                            assert matchesModel != null;
-                            matchesModel.uid = matchSnapshot.getId();
-                            matches.add(matchesModel);
-                        }
-                        resultCallback.accept(matches);
-                    }
-                },
-                (databaseError -> System.out.println("Looks like something went wrong!" + databaseError))
-        );
+    public void getMatches(Consumer<ArrayList<MatchesModel>> activityCallback) {
     }
 
     public void clear() {
