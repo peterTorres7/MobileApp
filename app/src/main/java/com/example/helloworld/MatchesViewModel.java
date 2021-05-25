@@ -14,6 +14,7 @@ public class MatchesViewModel {
     }
 
     public void getMatches(Consumer<ArrayList<MatchesModel>> activityCallback) {
+
     }
 
     public void clear() {
