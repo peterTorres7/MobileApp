@@ -37,5 +37,31 @@
     <string name="star">Star</string>
     <string name="you_liked">You liked </string>
     <string name="exclamation">!</string>
-
+    <string name="daily_matches_reminder">Please pick a daily matches reminder time below:</string>
+    <string name="time_selected" />
+    <string name="set_reminder">Set Reminder!</string>
+    <string name="your_reminder_time_is">Your reminder time is:</string>
+    <string name="please_select_distance">Please select maximum distance:</string>
+    <string name="please_select_gender">Please select gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="please_select_your_privacy">Please select your privacy:</string>
+    <string name="privacy">Private</string>
+    <string name="interested_age_range">Please select interested age range:</string>
+    <string-array name="distance_array">
+        <item>5 Miles</item>
+        <item>10 Miles</item>
+        <item>15 Miles</item>
+        <item>20 Miles</item>
+        <item>Over 20 Miles</item>
+    </string-array>
+    <string-array name="age_array">
+        <item>18 - 25</item>
+        <item>25 - 30</item>
+        <item>30 - 35</item>
+        <item>35 - 40</item>
+        <item>40 - 45</item>
+        <item>45 - 50</item>
+        <item>Over 50</item>
+    </string-array>
 </resources>
