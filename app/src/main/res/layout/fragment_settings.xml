@@ -10,8 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/tenDp"
-        android:textStyle="bold"
-        android:textSize="@dimen/twentySp"
+        android:textSize="@dimen/sixteenSp"
         android:text="@string/daily_matches_reminder"/>
 
     <TimePicker
@@ -53,6 +52,7 @@
         android:layout_below="@+id/timeTextView"
         android:padding="@dimen/tenDp"
         android:text="@string/please_select_distance"
+        android:textSize="@dimen/sixteenSp"
         android:textStyle="italic" />
 
     <Spinner
@@ -67,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/distanceSearchSpinner"
         android:text="@string/please_select_gender"
+        android:textSize="@dimen/sixteenSp"
         android:padding="@dimen/tenDp"
         android:layout_marginTop="@dimen/twentyDp"
         android:textStyle="italic" />
@@ -106,6 +107,7 @@
         android:layout_below="@+id/genderGroup"
         android:padding="@dimen/tenDp"
         android:text="@string/please_select_your_privacy"
+        android:textSize="@dimen/sixteenSp"
         android:textStyle="italic" />
 
     <CheckBox
@@ -121,6 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/privacyCheckBox"
         android:text="@string/interested_age_range"
+        android:textSize="@dimen/sixteenSp"
         android:textStyle="italic"
         android:padding="@dimen/tenDp" />
 
