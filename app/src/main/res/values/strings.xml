@@ -48,6 +48,10 @@
     <string name="please_select_your_privacy">Please select your privacy:</string>
     <string name="privacy">Private</string>
     <string name="interested_age_range">Please select interested age range:</string>
+    <string name="enable_location">Enable location</string>
+    <string name="location_message">Please enable location</string>
+    <string name="location_settings">Location Settings</string>
+    <string name="location_cancel">Location Cancel</string>
     <string-array name="distance_array">
         <item>5 Miles</item>
         <item>10 Miles</item>
@@ -64,4 +68,5 @@
         <item>45 - 50</item>
         <item>Over 50</item>
     </string-array>
+
 </resources>
