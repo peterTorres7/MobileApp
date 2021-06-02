@@ -24,7 +24,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.SimpleFormatter;
 
-public class MainActivity extends AppCompatActivity {
+public class    MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
