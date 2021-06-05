@@ -45,8 +45,6 @@ public class SecondActivityTest {
                 .check(matches(isClosed(Gravity.LEFT))).perform(DrawerActions.open());
         onView(withId(R.id.nav_view)).perform(NavigationViewActions.navigateTo(R.id.nav_settings));
         onView(allOf(withId(R.id.dailyMatchesReminderButton))).check((matches(withText("Set Reminder!"))));
-        onView(allOf(withId(R.id.distanceSearchSpinner))).perform(click());
-        onData(allOf(is(instanceOf(String.class)),is("15"))).perform(click());
     }
 
 }
