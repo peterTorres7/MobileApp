@@ -19,9 +19,15 @@ public class SettingsFragmentTest {
     public ActivityScenarioRule activityScenarioRule
             = new ActivityScenarioRule<>(SecondActivity.class);
 
+//    @Test
+//    public void checkReminderMessage() {
+//        onView(withId(R.id.timeSelectionReminder))
+//                .check(matches(withText("Please pick a daily matches reminder time below:")));
+//    }
+
     @Test
-    public void checkReminderMessage() {
-        onView(withId(R.id.timeSelectionReminder))
-                .check(matches(withText("Please pick a daily matches reminder time below:")));
+    public void checkButtonMessage() {
+        onView(withId(R.id.dailyMatchesReminderButton))
+                .check(matches(withText("Set Reminder!")));
     }
 }
