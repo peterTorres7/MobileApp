@@ -9,12 +9,16 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.contrib.DrawerMatchers.isClosed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.is;
 
 public class SecondActivityTest {
     @Rule
@@ -25,7 +29,7 @@ public class SecondActivityTest {
     public void profileDrawerCheck() {
         onView(withId(R.id.drawer_layout))
                 .check(matches(isClosed(Gravity.LEFT))).perform(DrawerActions.open());
-        onView(withId(R.id.nav_view)).perform(NavigationViewActions.navigateTo(R.id.nav_matches));
+        onView(withId(R.id.nav_view)).perform(NavigationViewActions.navigateTo(R.id.nav_profile));
     }
 
     @Test
@@ -40,6 +44,9 @@ public class SecondActivityTest {
         onView(withId(R.id.drawer_layout))
                 .check(matches(isClosed(Gravity.LEFT))).perform(DrawerActions.open());
         onView(withId(R.id.nav_view)).perform(NavigationViewActions.navigateTo(R.id.nav_settings));
+        onView(allOf(withId(R.id.dailyMatchesReminderButton))).check((matches(withText("Set Reminder!"))));
+        onView(allOf(withId(R.id.distanceSearchSpinner))).perform(click());
+        onData(allOf(is(instanceOf(String.class)),is("15"))).perform(click());
     }
 
 }
