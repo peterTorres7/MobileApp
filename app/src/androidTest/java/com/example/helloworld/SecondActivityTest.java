@@ -32,6 +32,13 @@ public class SecondActivityTest {
     public void matchesDrawerCheck() {
         onView(withId(R.id.drawer_layout))
                 .check(matches(isClosed(Gravity.LEFT))).perform(DrawerActions.open());
+        onView(withId(R.id.nav_view)).perform(NavigationViewActions.navigateTo(R.id.nav_matches));
+    }
+
+    @Test
+    public void settingsDrawerCheck() {
+        onView(withId(R.id.drawer_layout))
+                .check(matches(isClosed(Gravity.LEFT))).perform(DrawerActions.open());
         onView(withId(R.id.nav_view)).perform(NavigationViewActions.navigateTo(R.id.nav_settings));
     }
 
