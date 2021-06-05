@@ -14,13 +14,14 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 @RunWith(AndroidJUnit4.class)
 public class SettingsFragmentTest {
+
     @Rule
     public ActivityScenarioRule activityScenarioRule
             = new ActivityScenarioRule<>(SecondActivity.class);
 
-//    @Test
-//    public void checkReminderMessage() {
-//        onView(withId(R.id.timeSelectionReminder))
-//                .check(matches(withText("Please pick a daily matches reminder time below:")));
-//    }
+    @Test
+    public void checkReminderMessage() {
+        onView(withId(R.id.timeSelectionReminder))
+                .check(matches(withText("Please pick a daily matches reminder time below:")));
+    }
 }
