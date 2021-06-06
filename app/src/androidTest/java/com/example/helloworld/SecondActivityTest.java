@@ -53,18 +53,9 @@ public class SecondActivityTest {
         onView(withId(R.id.maximumDistanceTextView)).check(matches(withText("Please select maximum distance:")));
         onView(withId(R.id.distanceSearchSpinner)).perform(scrollTo(), click());
         onView(withText("5 Miles")).perform(click());
-        onView(withId(R.id.distanceSearchSpinner)).perform(scrollTo(), click());
-        onView(withText("10 Miles")).perform(click());
-        onView(withId(R.id.distanceSearchSpinner)).perform(scrollTo(), click());
-        onView(withText("15 Miles")).perform(click());
-        onView(withId(R.id.distanceSearchSpinner)).perform(scrollTo(), click());
-        onView(withText("20 Miles")).perform(click());
-        onView(withId(R.id.distanceSearchSpinner)).perform(scrollTo(), click());
-        onView(withText("Over 20 Miles")).perform(click());
 
         onView(withId(R.id.genderTextView)).check(matches(withText("Please select gender:")));
         onView(withId(R.id.radioMale)).perform(scrollTo(), click());
-        onView(withId(R.id.radioFemale)).perform(scrollTo(), click());
 
         onView(withId(R.id.privacyTextView)).check(matches(withText("Please select your privacy:")));
         onView(withId(R.id.privacyCheckBox)).perform(scrollTo(), click());
@@ -72,18 +63,6 @@ public class SecondActivityTest {
         onView(withId(R.id.ageRangeTextView)).check(matches(withText("Please select interested age range:")));
         onView(withId(R.id.ageRangeSpinner)).perform(scrollTo(), click());
         onView(withText("18 - 25")).perform(click());
-        onView(withId(R.id.ageRangeSpinner)).perform(scrollTo(), click());
-        onView(withText("25 - 30")).perform(click());
-        onView(withId(R.id.ageRangeSpinner)).perform(scrollTo(), click());
-        onView(withText("30 - 35")).perform(click());
-        onView(withId(R.id.ageRangeSpinner)).perform(scrollTo(), click());
-        onView(withText("35 - 40")).perform(click());
-        onView(withId(R.id.ageRangeSpinner)).perform(scrollTo(), click());
-        onView(withText("40 - 45")).perform(click());
-        onView(withId(R.id.ageRangeSpinner)).perform(scrollTo(), click());
-        onView(withText("45 - 50")).perform(click());
-        onView(withId(R.id.ageRangeSpinner)).perform(scrollTo(), click());
-        onView(withText("Over 50")).perform(click());
     }
 
 }
