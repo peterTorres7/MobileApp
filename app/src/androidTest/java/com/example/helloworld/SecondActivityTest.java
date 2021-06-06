@@ -48,6 +48,9 @@ public class SecondActivityTest {
         onView(allOf(withId(R.id.dailyMatchesReminderButton))).check((matches(withText("Set Reminder!"))));
         onView(withId(R.id.timeSelectionReminder)).check(matches(withText("Please pick a daily matches reminder time below:")));
 
+        onView(withId(R.id.yourReminderTimeIs)).check(matches(withText("Your reminder time is:")));
+
+        onView(withId(R.id.maximumDistanceTextView)).check(matches(withText("Please select maximum distance:")));
         onView(withId(R.id.distanceSearchSpinner)).perform(scrollTo(), click());
         onView(withText("5 Miles")).perform(click());
         onView(withId(R.id.distanceSearchSpinner)).perform(scrollTo(), click());
@@ -59,6 +62,14 @@ public class SecondActivityTest {
         onView(withId(R.id.distanceSearchSpinner)).perform(scrollTo(), click());
         onView(withText("Over 20 Miles")).perform(click());
 
+        onView(withId(R.id.genderTextView)).check(matches(withText("Please select gender:")));
+        onView(withId(R.id.radioMale)).perform(scrollTo(), click());
+        onView(withId(R.id.radioFemale)).perform(scrollTo(), click());
+
+        onView(withId(R.id.privacyTextView)).check(matches(withText("Please select your privacy:")));
+        onView(withId(R.id.privacyCheckBox)).perform(scrollTo(), click());
+
+        onView(withId(R.id.ageRangeTextView)).check(matches(withText("Please select interested age range:")));
         onView(withId(R.id.ageRangeSpinner)).perform(scrollTo(), click());
         onView(withText("18 - 25")).perform(click());
         onView(withId(R.id.ageRangeSpinner)).perform(scrollTo(), click());
