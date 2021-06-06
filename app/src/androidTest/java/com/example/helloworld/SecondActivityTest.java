@@ -4,6 +4,7 @@ import android.view.Gravity;
 
 import androidx.test.espresso.contrib.DrawerActions;
 import androidx.test.espresso.contrib.NavigationViewActions;
+import androidx.test.espresso.contrib.PickerActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import org.junit.Rule;
@@ -45,9 +46,11 @@ public class SecondActivityTest {
         onView(withId(R.id.drawer_layout))
                 .check(matches(isClosed(Gravity.LEFT))).perform(DrawerActions.open());
         onView(withId(R.id.nav_view)).perform(NavigationViewActions.navigateTo(R.id.nav_settings));
-        onView(allOf(withId(R.id.dailyMatchesReminderButton))).check((matches(withText("Set Reminder!"))));
-        onView(withId(R.id.timeSelectionReminder)).check(matches(withText("Please pick a daily matches reminder time below:")));
 
+        onView(withId(R.id.timeSelectionReminder)).check(matches(withText("Please pick a daily matches reminder time below:")));
+        onView(withId(R.id.dailyMatchesReminderTimePicker)).perform(PickerActions.setTime(5, 30));
+
+        onView(withId(R.id.dailyMatchesReminderButton)).check((matches(withText("Set Reminder!"))));
         onView(withId(R.id.yourReminderTimeIs)).check(matches(withText("Your reminder time is:")));
 
         onView(withId(R.id.maximumDistanceTextView)).check(matches(withText("Please select maximum distance:")));
