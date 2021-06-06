@@ -45,6 +45,11 @@ public class SecondActivityTest {
                 .check(matches(isClosed(Gravity.LEFT))).perform(DrawerActions.open());
         onView(withId(R.id.nav_view)).perform(NavigationViewActions.navigateTo(R.id.nav_settings));
         onView(allOf(withId(R.id.dailyMatchesReminderButton))).check((matches(withText("Set Reminder!"))));
+        onView(withId(R.id.timeSelectionReminder)).check(matches(withText("Please pick a daily matches reminder time below:")));
+        onView(withId(R.id.distanceSearchSpinner)).perform(click());
+        onView(withText("10 Miles")).perform(click());
+        onView(withId(R.id.ageRangeSpinner)).perform(click());
+        onView(withText("25 - 30")).perform(click());
     }
 
 }
