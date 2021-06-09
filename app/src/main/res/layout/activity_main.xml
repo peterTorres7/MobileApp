@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_name"
         android:layout_marginTop="@dimen/twentyDp"
+        android:padding="@dimen/tenDp"
         android:inputType="text"
         android:textColorHint="@color/white"
         android:textColor="@color/white" />
@@ -29,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/twentyDp"
+        android:padding="@dimen/tenDp"
         android:hint="@string/enter_age"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -39,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/twentyDp"
+        android:padding="@dimen/tenDp"
         android:hint="@string/occupation"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -49,6 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/twentyDp"
+        android:padding="@dimen/tenDp"
         android:hint="@string/description"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -59,6 +63,7 @@
         android:layout_height="wrap_content"
         android:text="@string/submit"
         android:onClick="goToSecondActivity"
+        android:layout_marginLeft="@dimen/twentyDp"
         android:layout_marginTop="@dimen/twentyDp"
         android:layout_marginBottom="@dimen/twentyDp" />
 
@@ -67,6 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/twentyDp"
+        android:padding="@dimen/tenDp"
         android:text="@string/my_name"
         android:textColor="@color/white" />
 

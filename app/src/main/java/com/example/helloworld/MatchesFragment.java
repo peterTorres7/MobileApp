@@ -27,6 +27,10 @@ import java.util.List;
 
 public class MatchesFragment extends Fragment {
 
+    ArrayList matchesList = new ArrayList();
+    MatchesViewModel matchesViewModel = new MatchesViewModel();
+
+    RecyclerView recyclerView;
     MatchesData matchesData;
     LocationManager locationManager;
 
@@ -46,29 +50,29 @@ public class MatchesFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
 
 
-        //Using local data
-//        List<MatchesData> matchesDataList = new ArrayList<>();
-//        matchesData = new MatchesData(R.drawable.coco, getString(R.string.coco));
-//        matchesDataList.add(matchesData);
-//        matchesData = new MatchesData(R.drawable.cookie, getString(R.string.cookie));
-//        matchesDataList.add(matchesData);
-//        matchesData = new MatchesData(R.drawable.evie, getString(R.string.evie));
-//        matchesDataList.add(matchesData);
-//        matchesData = new MatchesData(R.drawable.honey, getString(R.string.honey));
-//        matchesDataList.add(matchesData);
-//        matchesData = new MatchesData(R.drawable.lola, getString(R.string.lola));
-//        matchesDataList.add(matchesData);
-//        matchesData = new MatchesData(R.drawable.luna, getString(R.string.luna));
-//        matchesDataList.add(matchesData);
-//        matchesData = new MatchesData(R.drawable.nala, getString(R.string.nala));
-//        matchesDataList.add(matchesData);
-//        matchesData = new MatchesData(R.drawable.sky, getString(R.string.sky));
-//        matchesDataList.add(matchesData);
-//        matchesData = new MatchesData(R.drawable.star, getString(R.string.star));
-//        matchesDataList.add(matchesData);
-//
-//        MatchesCardRecyclerViewAdapter adapter = new MatchesCardRecyclerViewAdapter(matchesDataList, getContext());
-//        recyclerView.setAdapter(adapter);
+//        Using local data
+        List<MatchesData> matchesDataList = new ArrayList<>();
+        matchesData = new MatchesData(R.drawable.coco, getString(R.string.coco));
+        matchesDataList.add(matchesData);
+        matchesData = new MatchesData(R.drawable.cookie, getString(R.string.cookie));
+        matchesDataList.add(matchesData);
+        matchesData = new MatchesData(R.drawable.evie, getString(R.string.evie));
+        matchesDataList.add(matchesData);
+        matchesData = new MatchesData(R.drawable.honey, getString(R.string.honey));
+        matchesDataList.add(matchesData);
+        matchesData = new MatchesData(R.drawable.lola, getString(R.string.lola));
+        matchesDataList.add(matchesData);
+        matchesData = new MatchesData(R.drawable.luna, getString(R.string.luna));
+        matchesDataList.add(matchesData);
+        matchesData = new MatchesData(R.drawable.nala, getString(R.string.nala));
+        matchesDataList.add(matchesData);
+        matchesData = new MatchesData(R.drawable.sky, getString(R.string.sky));
+        matchesDataList.add(matchesData);
+        matchesData = new MatchesData(R.drawable.star, getString(R.string.star));
+        matchesDataList.add(matchesData);
+
+        MatchesCardRecyclerViewAdapter adapter = new MatchesCardRecyclerViewAdapter(matchesDataList, getContext());
+        recyclerView.setAdapter(adapter);
         return view;
     }
 
