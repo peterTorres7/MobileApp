@@ -8,3 +8,4 @@
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Features](#features)
+* [Status](#status)
