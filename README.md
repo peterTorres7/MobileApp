@@ -7,3 +7,4 @@
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
+* [Features](#features)
