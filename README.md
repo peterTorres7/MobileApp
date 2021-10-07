@@ -19,3 +19,6 @@ A dating mobile application with navigation to profile, matches, and settings fr
 
 ## Screenshots
 🎇
+
+## Setup
+🛠
