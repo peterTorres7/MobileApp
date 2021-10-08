@@ -24,3 +24,7 @@ A dating mobile application with navigation to profile, matches, and settings fr
 🛠
 
 1. Clone the repository
+
+```Bash
+git clone https://github.com/peterTorres7/MobileApp.git
+```
