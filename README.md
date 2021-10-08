@@ -22,3 +22,5 @@ A dating mobile application with navigation to profile, matches, and settings fr
 
 ## Setup
 🛠
+
+1. Clone the repository
