@@ -28,3 +28,12 @@ A dating mobile application with navigation to profile, matches, and settings fr
 ```Bash
 git clone https://github.com/peterTorres7/MobileApp.git
 ```
+2. Change the working directory
+
+```Bash
+cd MobileApp
+```
+
+3. Add Environment Variable path of this directory
+
+4. Run the app using terminal
