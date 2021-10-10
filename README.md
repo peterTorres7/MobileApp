@@ -40,3 +40,8 @@ cd MobileApp
 
 ## Built with
 👷
+- Android Studio
+
+- Java
+
+- XML
