@@ -49,3 +49,10 @@ cd MobileApp
 ## Features
 🚀
 
+User Ability:
+* Set up personal profile
+* View persoanl profile
+* Browse matches
+* Like a match
+* Set personal settings
+
