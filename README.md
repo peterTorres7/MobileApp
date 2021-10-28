@@ -64,3 +64,4 @@ Project is: _finished_
 ## Inspiration
 🎇
 
+Learn Android development.
