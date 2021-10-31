@@ -67,3 +67,5 @@ Project is: _finished_
 Learn Android development.
 
 ## Author
+🧑🏻
+
