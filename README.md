@@ -68,4 +68,5 @@ Learn Android development.
 
 ## Author
 🧑🏻
+Peter Torres
 
